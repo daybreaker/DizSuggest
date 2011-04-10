@@ -1,5 +1,5 @@
 class Idea < ActiveRecord::Base
-  has_one :user, :as => :submitter
+  belongs_to :submitter, :class_name => "User"
   
   attr_accessible :subject, :description, :submitter_id
 end

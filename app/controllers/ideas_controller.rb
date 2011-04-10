@@ -8,8 +8,9 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = Idea.new(params[:idea])   
-    @idea.submitter = current_user
+    @idea = Idea.new(params[:idea])
+    
+    @idea.submitter_id = current_user.id
     
     if @idea.save
       redirect_to ideas_url, :notice => "Successfully created idea."
