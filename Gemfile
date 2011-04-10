@@ -6,12 +6,18 @@ gem 'rails', '3.0.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem 'mocha'
 # Use unicorn as the web server
 # gem 'unicorn'
 
 gem "jquery-rails"
 gem "make_voteable"
+
+gem 'omniauth'
+
+gem "nifty-generators", :group => :development
+
+gem 'devise'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -32,3 +38,4 @@ gem "make_voteable"
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "mocha", :group => :test
