@@ -14,9 +14,12 @@
           Signed in as <%= current_user.email %>.<br />
           Not you? <%= link_to "Sign out", destroy_user_session_path %>
         <% else %>
-          <%= link_to "Sign In", authentications_path %>
+          <a href="/auth/facebook" class="auth_provider">
+            <%= image_tag "facebook-connect.png", :alt => "Facebook" %>
+          </a>
         <% end %>
       </div>
+      <br style="clear:both;" />
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :authentications
+  belongs_to :idea
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
