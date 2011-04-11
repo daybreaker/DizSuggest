@@ -37,4 +37,17 @@ class IdeasController < ApplicationController
     @idea.destroy
     redirect_to ideas_url, :notice => "Successfully destroyed idea."
   end
+  
+  def upvote
+    idea = Idea.find(params[:id])
+    current_user.up_vote(idea)
+    render :nothing
+
+  end
+  
+  def downvote
+    idea = Idea.find(params[:id])
+    current_user.down_vote(idea)
+  end
+    
 end

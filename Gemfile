@@ -12,11 +12,8 @@ gem 'mocha'
 
 gem "jquery-rails"
 gem "make_voteable"
-
 gem 'omniauth'
-
 gem "nifty-generators", :group => :development
-
 gem 'devise'
 
 # Deploy with Capistrano

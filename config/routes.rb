@@ -2,7 +2,11 @@ Dizsuggest::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
   devise_for :users, :controllers => {:registrations => 'registrations'}
   
-  resources :ideas
+  resources :ideas do
+    member do
+      post 'upvote','downvote'
+    end
+  end
   resources :authentications
 
   root :to => "ideas#index"

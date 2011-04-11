@@ -2,17 +2,19 @@
 
 <table>
   <tr>
+    <th>Total Votes</th>
     <th>Subject</th>
     <th>Description</th>
     <th>Submitter</th>
   </tr>
   <% for idea in @ideas %>
-    <tr>
+    <tr id="<%= idea.id %>">
+      <td><%= idea.votes %> (<%= idea.up_votes %> <a href="javascript://" class="upvote">+</a> / <%= idea.down_votes %>)</td>
       <td><%= idea.subject %></td>
       <td><%= idea.description %></td>
       <td><%= idea.submitter.email %></td>
-      <td><%= link_to "Edit", edit_idea_path(idea) %></td>
-      <td><%= link_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Edit", edit_idea_path(idea) if idea.submitter.id == current_user.id %></td>
+      <td><%= link_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete  if idea.submitter.id == current_user.id %></td>
     </tr>
   <% end %>
 </table>
@@ -20,3 +22,12 @@
 <% if user_signed_in? %>
   <p><%= link_to "New Idea", new_idea_path %></p>
 <% end %>
+
+<script>
+$(function(){
+  $('a.upvote').click(function(){
+    id = $(this).parents('tr').attr('id');
+    $.post('ideas/' + id + '/upvote', {id:id});
+  });
+});
+</script>

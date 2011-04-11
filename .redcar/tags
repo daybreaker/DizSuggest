@@ -1,4 +1,4 @@
-1302408821
+1302488975
 Application	/home/daybreaker/Shared/dizsuggest/config/application.rb	  class Application 
 ApplicationController	/home/daybreaker/Shared/dizsuggest/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/home/daybreaker/Shared/dizsuggest/app/helpers/application_helper.rb	module ApplicationHelper
@@ -10,6 +10,7 @@ AuthenticationsHelper	/home/daybreaker/Shared/dizsuggest/app/helpers/authenticat
 BrowsingTest	/home/daybreaker/Shared/dizsuggest/test/performance/browsing_test.rb	class BrowsingTest 
 CreateAuthentications	/home/daybreaker/Shared/dizsuggest/db/migrate/20110410010653_create_authentications.rb	class CreateAuthentications 
 CreateIdeas	/home/daybreaker/Shared/dizsuggest/db/migrate/20110410020100_create_ideas.rb	class CreateIdeas 
+CreateMakeVoteableTables	/home/daybreaker/Shared/dizsuggest/db/migrate/20110411002550_create_make_voteable_tables.rb	class CreateMakeVoteableTables 
 DeviseCreateUsers	/home/daybreaker/Shared/dizsuggest/db/migrate/20110410014415_devise_create_users.rb	class DeviseCreateUsers 
 Dizsuggest	/home/daybreaker/Shared/dizsuggest/config/application.rb	module Dizsuggest
 ErrorMessagesHelper	/home/daybreaker/Shared/dizsuggest/app/helpers/error_messages_helper.rb	module ErrorMessagesHelper
@@ -37,6 +38,8 @@ destroy	/home/daybreaker/Shared/dizsuggest/app/controllers/ideas_controller.rb	 
 down	/home/daybreaker/Shared/dizsuggest/db/migrate/20110410010653_create_authentications.rb	  def self.down
 down	/home/daybreaker/Shared/dizsuggest/db/migrate/20110410014415_devise_create_users.rb	  def self.down
 down	/home/daybreaker/Shared/dizsuggest/db/migrate/20110410020100_create_ideas.rb	  def self.down
+down	/home/daybreaker/Shared/dizsuggest/db/migrate/20110411002550_create_make_voteable_tables.rb	  def self.down
+downvote	/home/daybreaker/Shared/dizsuggest/app/controllers/ideas_controller.rb	  def downvote
 edit	/home/daybreaker/Shared/dizsuggest/app/controllers/ideas_controller.rb	  def edit
 error_messages	/home/daybreaker/Shared/dizsuggest/app/helpers/error_messages_helper.rb	    def error_messages
 error_messages_for	/home/daybreaker/Shared/dizsuggest/app/helpers/error_messages_helper.rb	  def error_messages_for
@@ -67,4 +70,6 @@ title	/home/daybreaker/Shared/dizsuggest/app/helpers/layout_helper.rb	  def titl
 up	/home/daybreaker/Shared/dizsuggest/db/migrate/20110410010653_create_authentications.rb	  def self.up
 up	/home/daybreaker/Shared/dizsuggest/db/migrate/20110410014415_devise_create_users.rb	  def self.up
 up	/home/daybreaker/Shared/dizsuggest/db/migrate/20110410020100_create_ideas.rb	  def self.up
+up	/home/daybreaker/Shared/dizsuggest/db/migrate/20110411002550_create_make_voteable_tables.rb	   def self.up
 update	/home/daybreaker/Shared/dizsuggest/app/controllers/ideas_controller.rb	  def update
+upvote	/home/daybreaker/Shared/dizsuggest/app/controllers/ideas_controller.rb	  def upvote
