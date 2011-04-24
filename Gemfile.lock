@@ -28,6 +28,7 @@ GEM
       activemodel (= 3.0.5)
       activesupport (= 3.0.5)
     activesupport (3.0.5)
+    acts-as-taggable-on (2.0.6)
     addressable (2.2.4)
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
@@ -141,6 +142,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   devise
   jquery-rails
   make_voteable

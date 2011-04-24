@@ -15,6 +15,7 @@ gem "make_voteable"
 gem 'omniauth'
 gem "nifty-generators", :group => :development
 gem 'devise'
+gem 'acts-as-taggable-on'
 
 # Deploy with Capistrano
 # gem 'capistrano'

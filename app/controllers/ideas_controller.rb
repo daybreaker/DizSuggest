@@ -5,6 +5,8 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    @locations = $locations
+    @attractions = $locations.collect{|x,y| Attraction.find(:all, :params => {:location => x})}
   end
 
   def create
