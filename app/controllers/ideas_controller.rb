@@ -41,13 +41,14 @@ class IdeasController < ApplicationController
   def upvote
     idea = Idea.find(params[:id])
     current_user.up_vote(idea)
-    render :nothing
+    render :nothing => true
 
   end
   
   def downvote
     idea = Idea.find(params[:id])
     current_user.down_vote(idea)
+    render :nothing => true
   end
     
 end

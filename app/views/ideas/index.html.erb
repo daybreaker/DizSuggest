@@ -9,12 +9,12 @@
   </tr>
   <% for idea in @ideas %>
     <tr id="<%= idea.id %>">
-      <td><%= idea.votes %> (<%= idea.up_votes %> <a href="javascript://" class="upvote">+</a> / <%= idea.down_votes %>)</td>
+      <td id="votes_<%= idea.id %>"><span><%= idea.votes %> (<%= idea.up_votes %> <%= raw '<a href="javascript://" class="upvote">+</a>' if user_signed_in?%> / <%= idea.down_votes %> <%= raw '<a href="javascript://" class="downvote">-</a>' if user_signed_in?%>)</span></td>
       <td><%= idea.subject %></td>
       <td><%= idea.description %></td>
       <td><%= idea.submitter.email %></td>
-      <td><%= link_to "Edit", edit_idea_path(idea) if idea.submitter.id == current_user.id %></td>
-      <td><%= link_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete  if idea.submitter.id == current_user.id %></td>
+      <td><%= link_to "Edit", edit_idea_path(idea) if (current_user && idea.submitter.id == current_user.id) %></td>
+      <td><%= link_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete  if (current_user && idea.submitter.id == current_user.id) %></td>
     </tr>
   <% end %>
 </table>
@@ -25,9 +25,20 @@
 
 <script>
 $(function(){
-  $('a.upvote').click(function(){
+  $('a.upvote').live('click', function(){
+    parent = $(this).parents('td');
     id = $(this).parents('tr').attr('id');
-    $.post('ideas/' + id + '/upvote', {id:id});
+    $.post('ideas/' + id + '/upvote', {id:id}, function(){
+      parent.load('/ td#votes_'+id+' span');
+    });
+  });
+  
+  $('a.downvote').live('click', function(){
+    parent = $(this).parents('td');
+    id = $(this).parents('tr').attr('id');
+    $.post('ideas/' + id + '/downvote', {id:id}, function(){
+      parent.load('/ td#votes_'+id+' span');
+    });
   });
 });
 </script>
