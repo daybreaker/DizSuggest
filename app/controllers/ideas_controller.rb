@@ -5,8 +5,10 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    @attractions = Hash.new
+    @types = $types
     @locations = $locations
-    @attractions = $locations.collect{|x,y| Attraction.find(:all, :params => {:location => x})}
+    @locations.each_key{|x| @attractions[x] = Attraction.find_all_for_location(x)}
   end
 
   def create

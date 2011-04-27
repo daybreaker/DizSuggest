@@ -7,6 +7,13 @@
   <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
-  </p>  
+  </p>
+  <p>
+    <%= f.select :type, @types.invert %>
+  </p>
+  <p>
+    <%= f.select :location, @locations.invert %>
+  </p> 
+  <p class="location_details" style="display:none"></p>
   <p><%= f.submit %></p>
 <% end %>
