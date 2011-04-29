@@ -75,7 +75,35 @@ a {
 }
 
 
-// application.css
+/* IDEAS */
+
+div.idea {
+ width: 75%;
+ border: 1px solid black;
+ padding: 10px;
+ margin-top: 10px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* authentication */
 .authentications {
   margin-bottom: 30px;
 }
