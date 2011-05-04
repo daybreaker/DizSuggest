@@ -8,22 +8,3 @@
   <p><%= link_to "New Idea", new_idea_path %></p>
 <% end %>
 
-<script>
-$(function(){
-  $('a.upvote').live('click', function(){
-    parent = $(this).parents('td');
-    id = $(this).parents('tr').attr('id');
-    $.post('ideas/' + id + '/upvote', {id:id}, function(){
-      parent.load('/ td#votes_'+id+' span');
-    });
-  });
-  
-  $('a.downvote').live('click', function(){
-    parent = $(this).parents('td');
-    id = $(this).parents('tr').attr('id');
-    $.post('ideas/' + id + '/downvote', {id:id}, function(){
-      parent.load('/ td#votes_'+id+' span');
-    });
-  });
-});
-</script>
