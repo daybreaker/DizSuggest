@@ -12,7 +12,9 @@
     <div id="container">
       <div id="user_nav">
         <% if user_signed_in? %>
-          Signed in as <%= current_user.email %>.<br />
+          <%= image_tag current_user.facebook.picture %><br />
+          <%= current_user.facebook.name %><br />
+          <%= current_user.email %><br />
           Not you? <%= link_to "Sign out", destroy_user_session_path %>
         <% else %>
           <a href="/auth/facebook" class="auth_provider">

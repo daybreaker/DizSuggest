@@ -1,6 +1,9 @@
 class IdeasController < ApplicationController
   def index
     @ideas = Idea.all
+    if (request.xhr?)
+      render :layout => false
+    end
   end
 
   def show

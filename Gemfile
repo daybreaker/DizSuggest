@@ -16,6 +16,7 @@ gem 'omniauth'
 gem "nifty-generators", :group => :development
 gem 'devise'
 gem 'acts-as-taggable-on'
+gem 'fb_graph'
 
 # Deploy with Capistrano
 # gem 'capistrano'
