@@ -2,7 +2,9 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_many :ideas
   
-  make_voter
+  #make_voter
+  acts_as_voter
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,

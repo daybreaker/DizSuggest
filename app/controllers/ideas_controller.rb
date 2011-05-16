@@ -8,6 +8,9 @@ class IdeasController < ApplicationController
 
   def show
     @idea = Idea.find(params[:id])
+    if (request.xhr?)
+      render :layout => false
+    end
   end
   
   def new
@@ -51,14 +54,14 @@ class IdeasController < ApplicationController
   
   def upvote
     idea = Idea.find(params[:id])
-    current_user.up_vote(idea)
+    current_user.vote_exclusively_for(idea)
     render :nothing => true
 
   end
   
   def downvote
     idea = Idea.find(params[:id])
-    current_user.down_vote(idea)
+    current_user.vote_exclusively_against(idea)
     render :nothing => true
   end
     

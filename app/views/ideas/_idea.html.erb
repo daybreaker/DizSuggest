@@ -1,6 +1,6 @@
 <div class="idea">
   <h2><%= idea.subject %></h2>
-  <p id="votes_<%= idea.id %>" class="votes"><span><%= idea.votes %> (<%= idea.up_votes %> <%= raw '<a href="javascript://" class="upvote">+</a>' if user_signed_in?%> / <%= idea.down_votes %> <%= raw '<a href="javascript://" class="downvote">-</a>' if user_signed_in?%>)
+  <p id="votes_<%= idea.id %>" class="votes"><span><%= idea.plusminus %> (<%= idea.votes_for %> <%= raw '<a href="javascript://" class="upvote">+</a>' if user_signed_in?%> / <%= idea.votes_against %> <%= raw '<a href="javascript://" class="downvote">-</a>' if user_signed_in?%>)
     <input type="hidden" class="idea" value="<%= idea.id %>" />
     <!-- @TODO: Find a better way to store the hidden inputs than inside the span -->
     <input type="hidden" class="page" value="index" /></span></p>

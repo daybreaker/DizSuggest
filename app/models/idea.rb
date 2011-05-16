@@ -1,8 +1,9 @@
 class Idea < ActiveRecord::Base
   belongs_to :submitter, :class_name => "User"
   
-  make_voteable
-  
+  #make_voteable
+  acts_as_voteable
+
   # type => new, improvement, fix
   # location => DL, DCA, MK, DHS, Epcot, AK, DWP, DWT
   # location_type => 'dining', 'attraction', 'hotel', 'landscaping'

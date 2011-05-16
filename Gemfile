@@ -1,22 +1,20 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
 gem 'mocha'
 # Use unicorn as the web server
 # gem 'unicorn'
 
 gem "jquery-rails"
-gem "make_voteable"
+#gem "make_voteable"
+gem 'thumbs_up'
 gem 'omniauth'
 gem "nifty-generators", :group => :development
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'fb_graph'
+gem 'acts_as_commentable_with_threading'
 
 # Deploy with Capistrano
 # gem 'capistrano'
