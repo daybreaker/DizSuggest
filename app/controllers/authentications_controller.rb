@@ -17,6 +17,11 @@ def create
     user = User.new
     user.apply_omniauth(omniauth)
     if user.save
+      if omniauth['provider'] == 'facebook'
+        user.name = user.facebook.name
+        user.photo = user.facebook.picture
+        user.save
+      end
       flash[:notice] = "Signed in successfully."
       sign_in_and_redirect(:user, user)
     else

@@ -252,3 +252,24 @@ footer p {
 margin-top: -15px;
 color: #faf0e6;
 }
+
+
+/**********************************/
+
+
+#content aside {
+	font-size:larger;
+	font-style:italic;
+	color:#333;
+	padding: 0 20px;
+}
+
+p.from {
+	float: right;
+}
+
+
+
+
+
+

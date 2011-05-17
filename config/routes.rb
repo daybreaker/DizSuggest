@@ -1,4 +1,8 @@
 Dizsuggest::Application.routes.draw do
+  get "pages/about"
+
+  get "pages/contact"
+
   match '/auth/:provider/callback' => 'authentications#create'
   devise_for :users, :controllers => {:registrations => 'registrations'}
   

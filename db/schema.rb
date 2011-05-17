@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110516032550) do
+ActiveRecord::Schema.define(:version => 20110517012442) do
 
   create_table "attractions", :force => true do |t|
     t.datetime "created_at"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(:version => 20110516032550) do
     t.datetime "updated_at"
     t.integer  "up_votes",                            :default => 0,  :null => false
     t.integer  "down_votes",                          :default => 0,  :null => false
+    t.string   "photo"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

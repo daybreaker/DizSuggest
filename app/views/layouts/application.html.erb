@@ -22,12 +22,10 @@
 	<nav><!-- top nav -->
 		<div class="menu">
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Products</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Support</a></li>
-				<li><a href="#">Contact Us</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="/pages/about">About</a></li>
+				<li><a href="/user">Profile</a></li>
+				<li><a href="/pages/contact">Contact Us</a></li>
 			</ul>
 		</div>
 	</nav><!-- end of top nav -->
@@ -47,8 +45,8 @@
 				<h3>Profile</h3>
 					<div id="user_nav">
 		        <% if user_signed_in? %>
-		          <%= image_tag current_user.facebook.picture %><br />
-		          <%= current_user.facebook.name %><br />
+		          <%= image_tag current_user.photo %><br />
+		          <%= current_user.name %><br />
 		          <%= current_user.email %><br />
 		          Not you? <%= link_to "Sign out", destroy_user_session_path %>
 		        <% else %>
@@ -63,7 +61,7 @@
 
 				<h3>Connect With Us</h3>
 					<ul>
-						<li><a href="#">Twitter</a></li>
+						<li><a href="http://twitter.com/#!/MouseSourcing">Twitter</a></li>
 						<li><a href="#">Facebook</a></li>
 						<li><a href="#">LinkedIn</a></li>
 						<li><a href="#">Flickr</a></li>
