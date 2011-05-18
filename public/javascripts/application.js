@@ -2,7 +2,7 @@ $(function(){
   $('a.upvote').live('click', function(){
     parent = $(this).parents('p');
     id = $('input.idea', parent).val();
-    url = ($('input.page', parent).val() == 'index') ? '/' : '/ideas/'+id;
+    url = (parent.hasClass('index')) ? '/' : '/ideas/'+id;
 
     $.post('/ideas/' + id + '/upvote', {id:id}, function(){
       parent.load(url + ' p#votes_'+ id +' span');
@@ -12,10 +12,13 @@ $(function(){
   $('a.downvote').live('click', function(){
     parent = $(this).parents('p');
     id = $('input.idea', parent).val();
-    url = ($('input.page', parent).val() == 'index') ? '/' : '/ideas/'+id;
+    url = (parent.hasClass('index')) ? '/' : '/ideas/'+id;
 
     $.post('/ideas/' + id + '/downvote', {id:id}, function(){
 			parent.load(url + ' p#votes_'+ id +' span');
     });
   });
+  
+   $('#flash_notice').fadeIn().delay(3500).fadeOut();
+
 });

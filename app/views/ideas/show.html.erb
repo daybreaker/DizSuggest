@@ -1,10 +1,10 @@
 <div class="@idea">
   <h2><%= @idea.subject %></h2>
-  <p id="votes_<%= @idea.id %>" class="votes">
+  <p id="votes_<%= @idea.id %>" class="votes show">
     <span>
       <%= @idea.plusminus %> (<%= @idea.votes_for %> <%= raw '<a href="javascript://" class="upvote">+</a>' if user_signed_in?%> / <%= @idea.votes_against %> <%= raw '<a href="javascript://" class="downvote">-</a>' if user_signed_in?%>)
       <input type="hidden" class="idea" value="<%= @idea.id %>" />
-      <input type="hidden" class="page" value="show" />
+
     </span>
   </p>
   <p class="description"><%= @idea.description %></p>

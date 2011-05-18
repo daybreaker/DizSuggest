@@ -16,7 +16,21 @@
 	<header><!-- header -->
 		<h1><a href="#">MouseSourcing</a></h1>
 		<h2>...dont put up a fence, build a new pathway</h2>
-		<img src="/images/headerimg.jpg" width="940" height="200" alt=""><!-- header image -->
+		<div id="user_nav">
+      <% if user_signed_in? %>
+        <%= image_tag current_user.photo %>
+        <p id="user_info">
+          <%= current_user.name %><br />
+          <%= current_user.email %><br />
+          <%= link_to "Log out", destroy_user_session_path %>
+        </p>
+      <% else %>
+        <a href="/auth/facebook" class="auth_provider">
+          <%= image_tag "facebook-connect.png", :alt => "Facebook" %>
+        </a>
+      <% end %>
+    </div>
+<!--		<img src="/images/headerimg.jpg" width="940" height="200" alt=""><!-- header image -->
 	</header><!-- end of header -->
 	
 	<nav><!-- top nav -->
@@ -36,25 +50,13 @@
         		<% flash.each do |name, msg| %>
 			        <%= content_tag :div, msg, :id => "flash_#{name}" %>
 			      <% end %>
-			      <%= content_tag :h1, yield(:title) if show_title? %>
 			      <%= yield %>
 						
 			</section><!-- end of #content -->
 
 		<aside id="sidebar"><!-- sidebar -->
-				<h3>Profile</h3>
-					<div id="user_nav">
-		        <% if user_signed_in? %>
-		          <%= image_tag current_user.photo %><br />
-		          <%= current_user.name %><br />
-		          <%= current_user.email %><br />
-		          Not you? <%= link_to "Sign out", destroy_user_session_path %>
-		        <% else %>
-		          <a href="/auth/facebook" class="auth_provider">
-		            <%= image_tag "facebook-connect.png", :alt => "Facebook" %>
-		          </a>
-		        <% end %>
-		      </div>
+				<h3>Filter</h3>
+					Tags to filter will go here
 					
 				<h3>Sponsors</h3>
 					<img src="images/ad180.png" alt="" /><br /><br />

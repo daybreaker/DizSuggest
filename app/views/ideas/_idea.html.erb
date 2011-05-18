@@ -1,14 +1,25 @@
 <div class="idea">
-  <h2><%= idea.subject %></h2>
-  <p id="votes_<%= idea.id %>" class="votes"><span><%= idea.plusminus %> (<%= idea.votes_for %> <%= raw '<a href="javascript://" class="upvote">+</a>' if user_signed_in?%> / <%= idea.votes_against %> <%= raw '<a href="javascript://" class="downvote">-</a>' if user_signed_in?%>)
+  <p id="votes_<%= idea.id %>" class="votes index"><span>
+  
+    <span class="total_votes"><%= idea.plusminus %></span>
+    <span class="upvote_container"><%= raw '<a href="javascript://" class="upvote">+</a>' if user_signed_in?%></span>
+    <span class="downvote_container"><%= raw '<a href="javascript://" class="downvote">-</a>' if user_signed_in?%></span>
+    
     <input type="hidden" class="idea" value="<%= idea.id %>" />
-    <!-- @TODO: Find a better way to store the hidden inputs than inside the span -->
-    <input type="hidden" class="page" value="index" /></span></p>
-  <p class="description"><%= idea.description %></p>
-  <p class="submitter"><%= idea.submitter.email %></p>
-  <p class="view_idea"><%= link_to "View", idea_path(idea) %></p>
-  <p class="owner_actions">
-      <%= link_to "Edit", edit_idea_path(idea) if (current_user && idea.submitter.id == current_user.id) %>
-      <%= link_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete  if (current_user && idea.submitter.id == current_user.id) %>
+  </span></p>
+  <div class="idea_info">
+    <h2><%= idea.subject %></h2>
+    
+    <p class="description"><%= idea.description %></p>
+
+    <p class="view_idea">
+      <%= link_to "View", idea_path(idea) %> | 
+      <%= link_to "Edit", edit_idea_path(idea) if (current_user && idea.submitter.id == current_user.id) %> | 
+      <%= link_to "Delete", idea, :confirm => 'Are you sure?', :method => :delete  if (current_user && idea.submitter.id == current_user.id) %>
+    </p>
+  </div>
+  <p class="submitter">
+    <span class="submitter_email"><strong>Submitted By: </strong><%= idea.submitter.name %></span>
+    <span class="total_comments"><strong>Total Comments: </strong><span class="number_comments">35</span></span>
   </p>
 </div>
