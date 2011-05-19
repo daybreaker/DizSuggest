@@ -1,9 +1,9 @@
 <div class="idea">
   <p id="votes_<%= idea.id %>" class="votes index"><span>
   
-    <span class="total_votes"><%= idea.plusminus %></span>
+    <span class="total_votes"><span><%= idea.plusminus %></span></span>
     <span class="upvote_container"><%= raw '<a href="javascript://" class="upvote">+</a>' if user_signed_in?%></span>
-    <span class="downvote_container"><%= raw '<a href="javascript://" class="downvote">-</a>' if user_signed_in?%></span>
+    <span class="downvote_container"><%= raw '<a href="javascript://" class="downvote">&ndash;</a>' if user_signed_in?%></span>
     
     <input type="hidden" class="idea" value="<%= idea.id %>" />
   </span></p>

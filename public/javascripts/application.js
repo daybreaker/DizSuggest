@@ -19,6 +19,9 @@ $(function(){
     });
   });
   
-   $('#flash_notice').fadeIn().delay(3500).fadeOut();
-
+  $('#flash_notice').fadeIn().delay(3500).fadeOut();
+   
+	$(".total_votes").textfill({maxFontSize: 60});
+	
 });
+

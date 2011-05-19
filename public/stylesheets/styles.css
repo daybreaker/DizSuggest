@@ -314,6 +314,7 @@ div.idea {
 	height: 120px;
 	float:left;
 	background: url('/images/ears.jpg') 0 12px no-repeat;
+	position: relative;
 }
 
 div.idea_info{
@@ -371,7 +372,51 @@ div.idea_info{
 	margin-right: 10px;
 }
 
-.total_votes{
-	display: inline-block;
-	margin: 50px 0 0 50px;
+.votes .total_votes{
+	position: absolute;
+	top: 60px;
+	left: 33px;
+	width: 53px;
+	height: 80px;
+	display: block;
+	text-align: center;
+}
+
+.votes .total_votes span{
+margin: 0 auto;
+}
+
+.votes .upvote_container{
+	position: absolute;
+	top: 29px;
+	left: 21px;
+}
+
+.votes .upvote_container a{
+	color: green;
+	text-decoration: none;
+	font-size: 250%;
+	outline: none;
+}
+
+.votes .upvote_container a:hover {
+	color: #2e2;
+}
+
+
+.votes .downvote_container{
+	position: absolute;
+	top: 27px;
+	left: 79px;
+}
+
+.votes .downvote_container a{
+	color: red;
+	text-decoration: none;
+	font-size: 250%;
+	outline: none;
+}
+
+.votes .downvote_container a:hover {
+	color: #c24;
 }
