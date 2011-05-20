@@ -3,6 +3,7 @@ class Idea < ActiveRecord::Base
   
   #make_voteable
   acts_as_voteable
+  acts_as_commentable
 
   # type => new, improvement, fix
   # location => DL, DCA, MK, DHS, Epcot, AK, DWP, DWT
