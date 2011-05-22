@@ -15,3 +15,8 @@
   </p>
  </div>
 
+<div id="comments">
+<%= link_to "Add Comment", new_comment_idea_path(@idea) %>
+<% @idea.root_comments.each do |comment| %>
+  <%= render comment %>
+<% end %>

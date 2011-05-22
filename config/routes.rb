@@ -8,7 +8,8 @@ Dizsuggest::Application.routes.draw do
   
   resources :ideas do
     member do
-      post 'upvote','downvote'
+      post 'upvote','downvote','create_comment'
+      get 'new_comment'
     end
   end
   resources :authentications

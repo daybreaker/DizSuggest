@@ -420,3 +420,7 @@ margin: 0 auto;
 .votes .downvote_container a:hover {
 	color: #c24;
 }
+
+.comment_children {
+	padding-left: 10px;
+}

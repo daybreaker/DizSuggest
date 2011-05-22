@@ -65,12 +65,16 @@ class IdeasController < ApplicationController
     render :nothing => true
   end
   
-  def add_comment
-    idea = Idea.find(params[:id])
-    comment = Comment.build_for(idea, current_user.id, params[:comment])
+  def new_comment
+    @idea = Idea.find(params[:id])
+  end
+  
+  def create_comment
+    @idea = Idea.find(params[:id])
+    comment = Comment.build_from(@idea, current_user.id, params[:comment])
     comment.save
     comment.move_to_child_of(Comment.find(params[:parent_id])) if !params[:parent_id].blank?
-    
+    redirect_to idea_path(@idea)
   end
     
 end
