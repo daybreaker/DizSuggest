@@ -1,5 +1,6 @@
 <%= form_tag create_comment_idea_path(@idea) %>
 <%= hidden_field_tag 'id', @idea.id %>
+<%= hidden_field_tag 'parent_id', @parent_id if @parent_id %>
 <%= label_tag "comment" %>
 <%= text_area_tag 'comment' %>
 <%= submit_tag "Submit" %>

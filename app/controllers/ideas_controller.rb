@@ -67,6 +67,8 @@ class IdeasController < ApplicationController
   
   def new_comment
     @idea = Idea.find(params[:id])
+    @parent_id = (!params[:comment].blank?) ? params[:comment] : false;
+    render :layout => false
   end
   
   def create_comment

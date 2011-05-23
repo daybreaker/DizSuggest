@@ -23,5 +23,13 @@ $(function(){
    
 	$(".total_votes").textfill({maxFontSize: 60});
 	
+	$(".reply").click(function(){
+		reply = $(this);
+		$.get(reply.attr('href'), function(data){
+			reply.parent('div').append(data);
+		});
+		return false;
+	});
+	
 });
 
