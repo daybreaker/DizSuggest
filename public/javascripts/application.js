@@ -5,7 +5,9 @@ $(function(){
     url = (parent.hasClass('index')) ? '/' : '/ideas/'+id;
 
     $.post('/ideas/' + id + '/upvote', {id:id}, function(){
-      parent.load(url + ' p#votes_'+ id +' span');
+      parent.load(url + ' p#votes_'+ id, function(){
+				$(".total_votes").textfill({maxFontSize: 60});
+			});
     });
   });
   
@@ -15,7 +17,9 @@ $(function(){
     url = (parent.hasClass('index')) ? '/' : '/ideas/'+id;
 
     $.post('/ideas/' + id + '/downvote', {id:id}, function(){
-			parent.load(url + ' p#votes_'+ id +' span');
+			parent.load(url + ' p#votes_'+ id, function(){
+				$(".total_votes").textfill({maxFontSize: 60});
+			});
     });
   });
   
