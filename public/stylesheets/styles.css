@@ -337,6 +337,8 @@ div.idea_info{
 	float: left;
 	min-height: 122px;
 	margin-left: 125px;
+	padding-bottom: 25px;
+		padding-left: 10px;
 	border-left: 3px solid #888;
 }
 
@@ -374,6 +376,7 @@ div.idea_info{
 
 #content .idea .idea_info .submitter{
 	position: absolute;
+	height: 20px;
 	bottom: 0;
 }
 
