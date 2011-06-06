@@ -18,7 +18,7 @@ class IdeasController < ApplicationController
     @attractions = Hash.new
     @types = $types
     @locations = $locations
-    @locations.each_key{|x| @attractions[x] = Attraction.find_all_for_location(x)}
+ #   @locations.each_key{|x| @attractions[x] = Attraction.find_all_for_location(x)}
   end
 
   def create
@@ -35,6 +35,10 @@ class IdeasController < ApplicationController
 
   def edit
     @idea = Idea.find(params[:id])
+    @attractions = Hash.new
+    @types = $types
+    @locations = $locations
+ #   @locations.each_key{|x| @attractions[x] = Attraction.find_all_for_location(x)}
   end
 
   def update

@@ -17,7 +17,7 @@
     </span>
   </div>
   <div class="idea_info">
-    <p class="description"><%= simple_format idea.description %></p>
+    <%= simple_format idea.description %>
     <div class="submitter">
       <span class="submitter_email"><strong>Submitted By: </strong><%= idea.submitter.name %></span>
       <span class="total_comments"><strong>Total Comments: </strong><span class="number_comments"><%= idea.comment_threads.count %></span></span>
