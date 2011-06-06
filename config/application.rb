@@ -31,7 +31,7 @@ module Dizsuggest
     # config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w(jquery rails jquery-ui jquery-textfill-0.1 modernizr-1.7.min)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery rails jquery-ui jquery-textfill-0.1 modernizr-1.7.min jquery.autoGrowInput jquery.tagedit-1.1.0)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"

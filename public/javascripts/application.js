@@ -35,5 +35,11 @@ $(function(){
 		return false;
 	});
 	
+	$( ".tag_cloud" ).find('input.tag').tagedit({
+//			autocompleteURL: 'server/autocomplete.php',
+			allowEdit: false,
+			allowAdd: false
+		});
+	
 });
 

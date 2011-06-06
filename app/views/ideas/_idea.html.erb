@@ -24,7 +24,9 @@
     </div>
   </div>
   <div class="tag_cloud">
-    Tags, with masonry maybe?
+    <% idea.tags.each do |tag| %>
+      <input type="text" name="tag[<%= tag.id %>]" class="tag" value="<%= tag.name %>" />
+    <% end %>
   </div>
   <span class="clear"></span>
 </div>

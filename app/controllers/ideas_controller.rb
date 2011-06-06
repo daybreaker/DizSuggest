@@ -23,7 +23,7 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.new(params[:idea])
-    
+    @idea.tag_list = params[:idea][:tag_list]
     @idea.submitter_id = current_user.id
     
     if @idea.save
@@ -43,6 +43,8 @@ class IdeasController < ApplicationController
 
   def update
     @idea = Idea.find(params[:id])
+    @idea.tag_list = params[:idea][:tag_list]
+    
     if @idea.update_attributes(params[:idea])
       redirect_to ideas_url, :notice  => "Successfully updated idea."
     else

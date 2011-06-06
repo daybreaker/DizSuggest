@@ -9,11 +9,8 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.select :type, @types.invert %>
+    Tags (seperate with comma ','): <%= f.text_field :tag_list %>
   </p>
-  <p>
-    <%= f.select :location, @locations.invert %>
-  </p> 
   <p class="location_details" style="display:none"></p>
   <p><%= f.submit %></p>
 <% end %>
