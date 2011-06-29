@@ -12,51 +12,38 @@ display: block;
 }
 
 body {
-line-height: 1;
 background: #BBCFE8;
 font-family: Verdana, Arial, Helvetica, sans-serif;
 color: #333;
 font-size: 14px;
 line-height: 18px;
+margin: 0;
+padding: 0;
+}
+	
+header{
+background: #fff;
 }
 	
 /* layout */
 
-#wrapper {
-width: 100%;
-background: #fff;
-}
-
 nav {
 clear: both;
 width: 100%;
-height: 50px;
+height: 35px;
 background: #3d6497;
-margin-top: -5px;
 }
 
 #main {
 width: 100%;
 padding-top: 10px;
-background: #FFF url("/images/colbg.png") repeat-y;
-overflow: hidden;
-}
+margin: 0 auto;
 
-#content_wrapper {
-float: left;
-width: 100%;
 }
 
 #content {
-margin-left: 260px;
-margin-right: 25px;
-}
-
-#sidebar {
-float: left;
-padding-left: 20px;
-width: 220px;
-margin-right:-100%;
+width: 100%;
+margin: 0 auto;
 }
 
 footer {
@@ -92,13 +79,13 @@ padding-left: 5px;
 /* nav */
 
 nav .menu {
-font-size: 16px;
+font-size: 13px;
 font-weight: bold;
 }
 
 nav .menu ul {
 margin: 0;
-padding: 17px 0 0 20px;
+padding: 10px 0 0 20px;
 list-style: none;
 line-height: normal;
 }
@@ -131,8 +118,8 @@ header>h1 {
 float: left;
 margin: 0 0 5px 10px;
 width: 400px;
-font-size: 40px;
-line-height: 36px;
+font-size: 30px;
+line-height: 26px;
 }
 
 header>h1 a {
@@ -150,9 +137,9 @@ margin: 0 0 5px 10px;
 }
 
 header>#user_nav{
-height: 70px;
+height: 60px;
 float: right;
-margin-top: -40px;
+margin-top: -32px;
 width: auto;
 }
 
@@ -268,31 +255,12 @@ color: #faf0e6;
 
 span.clear { clear: left; display: block; }
 
-/**********************************/
-
-
-#content aside {
-	font-size:larger;
-	font-style:italic;
-	color:#333;
-	padding: 0 20px;
-}
-
-p.from {
-	float: right;
-}
-
-
-
-
 
 /* IDEAS */
 
 div.idea {
- width: 100%;
- border: 1px solid black;
  padding: 0;
- margin: 0 0 10px 0;
+ margin: 15px 50px;
  border: 3px solid #888;
  background: #fff;
  position: relative;
@@ -345,7 +313,6 @@ div.idea_info{
 	top: 35px;
 	right: 0;
 	text-align: right;
-	padding-right: 10px;
 }
 
 #content .idea_info>p{
