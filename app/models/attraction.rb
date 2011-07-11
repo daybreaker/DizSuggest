@@ -1,12 +1,2 @@
-class Attraction < ActiveResource::Base
-  self.format = :json
-  self.site = 'http://touringplans.com/:location'
-  
-  def self.find_all_for_location(location)
-    self.find(:all, :params => {:location => location})
-  end
-  
-  def self.find_attraction(attraction,location)
-    self.find(attraction, :params => {:location => location})    
-  end
+class Attraction < ActiveRecord::Base
 end

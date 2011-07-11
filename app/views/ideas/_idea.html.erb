@@ -24,9 +24,7 @@
     </div>
   </div>
   <div class="tag_cloud">
-    <% idea.tags.each do |tag| %>
-      <input type="text" name="tag[<%= tag.id %>]" class="tag" value="<%= tag.name %>" />
-    <% end %>
+    <%= idea.tags.join(', ') %>
   </div>
   <span class="clear"></span>
 </div>

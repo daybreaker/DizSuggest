@@ -1,4 +1,6 @@
 Dizsuggest::Application.routes.draw do
+  resources :parks
+
   get "pages/about"
 
   get "pages/contact"
