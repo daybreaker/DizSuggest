@@ -170,8 +170,6 @@ ActiveRecord::Schema.define(:version => 20110630022157) do
     t.integer  "submitter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "up_votes",     :default => 0, :null => false
-    t.integer  "down_votes",   :default => 0, :null => false
   end
 
   create_table "parks", :force => true do |t|
@@ -210,8 +208,6 @@ ActiveRecord::Schema.define(:version => 20110630022157) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "up_votes",                            :default => 0,  :null => false
-    t.integer  "down_votes",                          :default => 0,  :null => false
     t.string   "photo"
     t.string   "name"
   end
@@ -232,19 +228,5 @@ ActiveRecord::Schema.define(:version => 20110630022157) do
   add_index "votes", ["voteable_id", "voteable_type"], :name => "index_votes_on_voteable_id_and_voteable_type"
   add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], :name => "fk_one_vote_per_user_per_entity", :unique => true
   add_index "votes", ["voter_id", "voter_type"], :name => "index_votes_on_voter_id_and_voter_type"
-
-  create_table "votings", :force => true do |t|
-    t.string   "voteable_type"
-    t.integer  "voteable_id"
-    t.string   "voter_type"
-    t.integer  "voter_id"
-    t.boolean  "up_vote",       :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "votings", ["voteable_type", "voteable_id", "voter_type", "voter_id"], :name => "unique_voters", :unique => true
-  add_index "votings", ["voteable_type", "voteable_id"], :name => "index_votings_on_voteable_type_and_voteable_id"
-  add_index "votings", ["voter_type", "voter_id"], :name => "index_votings_on_voter_type_and_voter_id"
 
 end
