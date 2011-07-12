@@ -1,3 +1,15 @@
+body{
+	width:100%;
+}
+
+div#page{
+	width: 976px;
+	margin: 0 auto;
+}
+
+
+
+
 .idea{
 	border: 1px black solid;
 	margin: 10px;
