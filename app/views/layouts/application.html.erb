@@ -40,8 +40,8 @@
         </header>
         
         <!-- Facebook User info, top right -->
-        <div class="stack1of2">
-          <div id="user_info" class="stackContent">
+        <div id="user_info" class="stack1of2">
+          <div class="stackContent">
             <% if user_signed_in? %>
               <%= image_tag current_user.photo %>
               <p id="user_info">
@@ -61,7 +61,7 @@
         <div id="nav" class="stackContent">
           <div class="menu">
 	          <ul>
-		          <li><a href="/">Home</a></li>
+		          <li class="current"><a href="/">Home</a></li>
 		          <li><a href="/pages/about">About</a></li>
 		          <li><a href="/user">Profile</a></li>
 		          <li><a href="/pages/contact">Contact Us</a></li>

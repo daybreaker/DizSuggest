@@ -8,6 +8,58 @@ div#page{
 	margin: 0 auto;
 }
 
+
+
+#header{
+	height: 150px;
+	background-image: -webkit-gradient(
+		  linear,
+		  left bottom,
+		  left top,
+		  color-stop(0.14, rgb(33,90,107)),
+		  color-stop(0.57, rgb(14,66,66))
+	);
+	background-image: -moz-linear-gradient(
+		  center bottom,
+		  rgb(33,90,107) 14%,
+		  rgb(14,66,66) 57%
+	);
+}
+
+#header header{
+	height: 110px;
+}
+
+#header #nav{
+	height: 40px;
+}
+
+.menu ul{
+    margin: 0; padding: 0;
+    float: left;}
+ 
+.menu ul li{
+    display: inline;}
+ 
+.menu ul li a{
+    float: left; text-decoration: none;
+    color: white;
+    padding: 10.5px 11px;
+    background-color: #333; }
+ 
+.menu ul li a:visited{
+    color: white;}
+ 
+.menu ul li a:hover, .menu ul li.current a{
+    color: #fff;
+    background-color:#0b75b2;}
+
+#header #nav ul li.current a{ 
+	border-bottom: 3px red solid;
+	margin-bottom: -3px;
+}
+
+
 .idea{
 	border: 1px black solid;
 	margin: 10px;
