@@ -1,0 +1,27 @@
+<div class="stackContent">
+  <h2>Newest Ideas</h2>
+  <% @new_ideas.each do |idea| %>
+    <%= idea.inspect %>
+  <% end %>
+
+  <h2>Top Ideas</h2>
+  <% @top_ideas.each do |idea| %>
+    <%= idea.inspect %>
+  <% end %>
+</div>
+
+<div class="stack1of3">
+  <div class="stackContent">
+    <h3>All Ideas</h3>
+  </div>
+</div>
+<div class="stack1of3">
+  <div class="stackContent">
+    <h3>By Location</h3>
+  </div>
+</div>
+<div class="stack1of3">
+  <div class="stackContent">
+    <h3>By Type</h3>
+  </div>
+</div>

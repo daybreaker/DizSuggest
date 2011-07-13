@@ -86,3 +86,30 @@ class IdeasController < ApplicationController
   end
     
 end
+
+
+=begin
+require 'open-uri'
+require 'json'
+
+locations = %w(magic-kingdom epcot animal-kingdom hollywood-studios)
+types = %w(dining attractions)
+
+url = "http://touringplans.com/"
+
+
+#urls = %w(http://touringplans.com/magic-kingdom/attractions http://touringplans.com/magic-kingdom/dining http://touringplans.com/walt-disney-world/resort-dining http://touringplans.com/walt-disney-world/hotels)
+attractions = {}
+
+locations.each do |loc|
+  attractions[loc] = {}
+  types.each do |type|
+    attractions[loc][type] = JSON.parse(open(url + loc + '/' + type + '.json').read)
+  end
+end
+
+#results for dining is array of arrays, split into table vs quick
+result_show = JSON.parse(open(urls[1] + '/' + result[0][1]['permalink'] +'.json').read)
+
+
+=end
