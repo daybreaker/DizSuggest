@@ -28,10 +28,19 @@
   <div id="page">
     <div class="stack">
       
+      <!-- START HEADER -->
       <div id="header">
-        <div id="header_logo" class="stackContent">
-          <h1><a href="#">MouseSourcing</a></h1>
-          <h2>...dont put up a fence, build a new pathway</h2>
+        
+        <!-- Logo, Top left -->
+        <header class="stack1of2">
+          <span class="stackContent">  
+            <h1><a href="#">MouseSourcing</a></h1>
+            <h2>...dont put up a fence, build a new pathway</h2>
+          </span>
+        </header>
+        
+        <!-- Facebook User info, top right -->
+        <div class="stack1of2">
           <div id="user_info" class="stackContent">
             <% if user_signed_in? %>
               <%= image_tag current_user.photo %>
@@ -47,7 +56,9 @@
             <% end %>
           </div>
         </div>
-        <div id="nav" class="stackContent"><!-- top nav -->
+        
+        <!-- top nav, full width, below header -->
+        <div id="nav" class="stackContent">
           <div class="menu">
 	          <ul>
 		          <li><a href="/">Home</a></li>
@@ -56,9 +67,12 @@
 		          <li><a href="/pages/contact">Contact Us</a></li>
 	          </ul>
           </div>
-	      </div><!-- end of top nav -->	
+	      </div>      
+      
       </div> <!-- End of div#header -->
       
+      
+      <!-- start content -->
       <div id="content">
 	      <div id="message_wrapper" class="stackContent">			
       		<% flash.each do |name, msg| %>
@@ -67,8 +81,11 @@
         </div>
         <%= yield %>
       </div><!-- end of div#content -->
-      
+
+      <!-- Start footer -->      
       <div id="footer">
+      
+        <!-- footer, left col -->
         <div class="stack1of3">          
       	  <div class="stackContent">			       
       		  <h4>Friends</h4>
@@ -79,6 +96,8 @@
             </ul>
           </div>
         </div>
+        
+        <!-- footer middle col -->
 				<div class="stack1of3">
 				  <div class="stackContent">
 					  <h4>Sponsors</h4>
@@ -92,6 +111,8 @@
 				    </ul>
 					</div>
         </div>
+        
+        <!-- footer right col -->
 				<div class="stack1of3">
 				  <div class="stackContent">
 					  <h4>Coolness</h4>
@@ -102,12 +123,14 @@
 	            </ul>
           </div>
         </div>
+        
+        <!-- footer, bottom -->
         <div class="stackContent">
 	        <p>&copy; 2010 <a href="#">yoursite.com</a> You know, and other stuff too.</p>
 				</div>
       </div>
     
-    </div>
-  </div>
+    </div><!-- end stack -->
+  </div><!-- end page -->
 </body>
 </html>
