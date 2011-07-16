@@ -14,7 +14,7 @@
 	<meta name="author" content="Brad Huber">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<link href='http://fonts.googleapis.com/css?family=Istok+Web&v2' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="/favicon.ico">
   <%= stylesheet_link_tag "application","stacklayout","styles"%>
 
@@ -40,20 +40,22 @@
         </header>
         
         <!-- Facebook User info, top right -->
-        <div id="user_info" class="stack1of2">
+        <div id="user_info_container" class="stack1of2">
           <div class="stackContent">
-            <% if user_signed_in? %>
-              <%= image_tag current_user.photo %>
-              <p id="user_info">
-                <%= current_user.name %><br />
-                <%= current_user.email %><br />
-                <%= link_to "Log out", destroy_user_session_path %>
-              </p>
-            <% else %>
+            <p id="user_info">
+              <% if user_signed_in? %>
+                <span>
+                  <%= current_user.name %><br />
+                  <%= current_user.email %><br />
+                  <%= link_to "Log out", destroy_user_session_path %>
+                </span>
+                <%= image_tag current_user.photo %>
+              <% else %>
               <a href="/auth/facebook" class="auth_provider">
                 <%= image_tag "facebook-connect.png", :alt => "Facebook" %>
               </a>
             <% end %>
+            </p>
           </div>
         </div>
         
