@@ -1,10 +1,14 @@
 body{
 	width:100%;
+	background: #efefe0;
 }
 
 div#page{
 	width: 976px;
 	margin: 0 auto;
+  box-shadow: 0 0 10px 10px #666;
+  background: white;
+
 }
 
 #header{
@@ -127,6 +131,19 @@ font-family: 'Varela Round', sans-serif;
 #header #nav ul li.current a{ 
 	border-bottom: 3px red solid;
 	margin-bottom: -3px;
+}
+
+
+#content{
+	border-top: solid 20px #419AAB;
+}
+
+#idea_container div{
+	padding: 20px;
+}
+
+#idea_type_container div{
+	padding: 20px;
 }
 
 
