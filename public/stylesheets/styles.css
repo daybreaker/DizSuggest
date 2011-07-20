@@ -25,13 +25,25 @@ div#page{
 
 #header header{
 	height: 110px;
+	position: relative;
 }
 
 #header header h1{
-	font-family: 'Istok Web', sans-serif;
-	font-size: 18px;
+font-family: 'Varela Round', sans-serif;
+	font-size: 24px;
 	color: white;
 	margin: 10px;
+}
+
+#header header h1:before {
+	content: "\2022";
+	font-size: 210px;
+	position: absolute;
+	bottom: -98px;
+	left: -29px;
+	font-family: 'Varela Round', sans-serif;
+	color: white;
+	opacity: 0.2;
 }
 
 #header header h1 a {
