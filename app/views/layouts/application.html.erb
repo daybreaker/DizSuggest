@@ -40,38 +40,37 @@
           </span>
         </header>
         
-        <!-- Facebook User info, top right -->
-        <div id="user_info_container" class="stack1of2">
-          <div class="stackContent">
-            <p id="user_info">
-              <% if user_signed_in? %>
-                <span>
-                  <%= current_user.name %><br />
-                  <%= current_user.email %><br />
-                  <%= link_to "Log out", destroy_user_session_path %>
-                </span>
-                <%= image_tag current_user.photo %>
-              <% else %>
-              <a href="/auth/facebook" class="auth_provider">
-                <%= image_tag "facebook-connect.png", :alt => "Facebook" %>
-              </a>
-            <% end %>
-            </p>
-          </div>
+        <!-- top nav, top right -->
+        <div class="stack1of2">
+          <div id="nav" class="stackContent">
+            <div class="menu">
+  	          <ul>
+  		          <li class="current"><a href="/">Home</a></li>
+  		          <li><a href="/pages/about">About</a></li>
+  		          <li><a href="/user">Profile</a></li>
+  		          <li><a href="/pages/contact">Contact Us</a></li>
+  	          </ul>
+            </div>
+  	      </div>      
+  	    </div>
+        <!-- Facebook User info, full width below header -->
+        <div id="user_info_container" class="stackContent">
+          <p id="user_info">
+            <% if user_signed_in? %>
+              <span>
+                <%= current_user.name %><br />
+                <%= current_user.email %><br />
+                <%= link_to "Log out", destroy_user_session_path %>
+              </span>
+              <%= image_tag current_user.photo %>
+            <% else %>
+            <a href="/auth/facebook" class="auth_provider">
+              <%= image_tag "facebook-connect.png", :alt => "Facebook" %>
+            </a>
+          <% end %>
+          </p>
         </div>
-        
-        <!-- top nav, full width, below header -->
-        <div id="nav" class="stackContent">
-          <div class="menu">
-	          <ul>
-		          <li class="current"><a href="/">Home</a></li>
-		          <li><a href="/pages/about">About</a></li>
-		          <li><a href="/user">Profile</a></li>
-		          <li><a href="/pages/contact">Contact Us</a></li>
-	          </ul>
-          </div>
-	      </div>      
-      
+                
       </div> <!-- End of div#header -->
       
       
