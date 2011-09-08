@@ -16,7 +16,7 @@ Dizsuggest::Application.routes.draw do
   end
   resources :authentications
 
-  root :to => "pages#index"
+  root :to => "ideas#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

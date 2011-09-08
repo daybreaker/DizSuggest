@@ -1,17 +1,24 @@
 <%= form_for @idea do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    Tags (seperate with comma ','): <%= f.text_field :tag_list %>
-  </p>
-  <p class="location_details" style="display:none"></p>
-  <p><%= f.submit %></p>
+  <fieldset class="bigger">
+    <legend><%= action.capitalize %> an Idea</legend>
+    <p>
+      <%= f.label :subject %>
+      <div class="input"><%= f.text_field :subject, {:class=>'xxlarge'} %></div>
+    </p>
+    <p>
+      <%= f.label :description %>
+      <div class="input"><%= f.text_area :description, {:class=>'xxlarge'} %></div>
+    </p>
+    <p>
+      <%= f.label :tag_list, raw("Tags<br><span class=\"small\">(seperate with comma ',')") %>
+      <div class="input"><%= f.text_field :tag_list, {:class=>'xxlarge'} %></div>
+    </p>
+    <p class="location_details" style="display:none"></p>
+    <div class="actions">
+      <%= f.submit :submit, {:class =>"btn primary"} %>
+      <div class="clear"></div>
+    </div>
+  </fieldset>
 <% end %>
 <!-- TODO: Tiered Tag Cloud. Maybe step by step form, all ajaxy? -->
