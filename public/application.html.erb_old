@@ -1,0 +1,119 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title><%= content_for?(:title) ? yield(:title) + "Mouse Sourcing" : "Mouse Sourcing" %></title>
+  
+  <meta name="description" content="Helping come up with a better Disney">
+	<meta name="author" content="Brad Huber">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/favicon.ico">
+  <%= stylesheet_link_tag "application","styles"%>
+
+  <%= javascript_include_tag :defaults %>
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<%= csrf_meta_tag %>
+  <%= yield(:head) %>
+  
+</head>
+<body>
+  <div id='header-wrapper'>
+    <div class='container' id='header'>
+      <div id='logo'>
+        <h1><a href="http://www.mousesourcing.com/"><span>MouseSourcing</span></a></h1>
+      </div>
+      <div id='nav-bar'>
+        <ul class='menu'>
+          <li class='menu-solo'>
+            <!-- start facebook login -->
+            <% if user_signed_in? %>
+              <div id="user_info_container">
+                <p id="user_info">
+                  <span>
+                    <%= current_user.name %><br />
+                    <%= current_user.email %><br />
+                    <%= link_to "Log out", destroy_user_session_path %>
+                  </span>
+                  <%= image_tag current_user.photo %>
+                </p>
+              </div>
+            <% else %>
+                <a href="/auth/facebook" class="auth_provider signin">
+                  <%= image_tag "fb-login-button.png", :alt => "Facebook" %>
+                </a>
+                <div class="clear"></div>
+            <% end %>
+            <!-- end facebook login -->
+          </li>
+          <li>
+            <a href="#" class="top-nav menu-trigger" id="trigger-my-neighborhoods">Filter<span class='sf-sub-indicator'>&#x25BC;</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class='last' id='search-simple'>
+        <form accept-charset="UTF-8" action="/search" id="search-simple-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input class="text" id="q" name="q" type="text" value="Search Ideas" />
+        <input class="btn white in-search" id="search-simple-submit" type="submit" value="&#x25B6;" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="sidebar" class="span4 columns">
+  
+ 
+  
+    <div id="sorting" class="rounded-corners">
+      <h3>Sort by:</h3>
+      <h4>Location</h4>
+    </div>
+  
+    <div class="rounded-corners">          
+  	  <h4>Friends</h4>
+      <ul>
+        <li><a href="#">one linkylink</a></li>
+        <li><a href="#">two linkylinks</a></li>
+        <li><a href="#">three linkylinks</a></li>
+      </ul>
+    </div>
+
+  	<div class="rounded-corners">
+  	  <h4>Sponsors</h4>
+      <img src="http://placekitten.com/180/180" alt="" /><br /><br />
+      <h4>Connect With Us</h4>
+      <ul>
+  	    <li><a href="http://twitter.com/#!/MouseSourcing">Twitter</a></li>
+  	    <li><a href="#">Facebook</a></li>
+  	    <li><a href="#">LinkedIn</a></li>
+  	    <li><a href="#">Flickr</a></li>
+      </ul>
+    </div>
+    
+  </div>
+  <!-- end sidebar -->
+  
+  
+  <% flash.each do |name, msg| %>
+    <div class="message">
+      <%= content_tag :div, msg, {:id => "flash_#{name}", :class => "alert-message success"} %>
+    </div>
+  <% end %>
+  
+  <div id="content" class="span12 columns">
+    <%= yield %>
+  </div>
+
+
+  <div id="footer">
+    <p>&copy; 2010 <a href="#">yoursite.com</a> You know, and other stuff too.</p>
+  </div>
+
+</body>
+</html>

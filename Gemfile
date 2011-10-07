@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.1'
 gem 'mysql2'
 gem 'mocha'
 # Use unicorn as the web server
@@ -14,7 +14,12 @@ gem "nifty-generators", :group => :development
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'fb_graph'
-gem 'acts_as_commentable_with_threading'
+gem 'acts_as_commentable_with_threading', :git => 'http://github.com/daybreaker/acts_as_commentable_with_threading.git'
+gem 'haml'
+gem 'sass'
+gem 'compass'
+gem 'rb-fsevent'
+gem "uglifier"
 
 # Deploy with Capistrano
 # gem 'capistrano'

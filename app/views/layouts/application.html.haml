@@ -1,0 +1,49 @@
+!!! 5
+%html
+  %head
+    %title= content_for?(:title) ? yield(:title) + " | Mouse Sourcing" : "Mouse Sourcing"
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'
+    /[if IE]
+      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    = javascript_include_tag :application
+    = csrf_meta_tags  
+  %body
+    #header-wrapper
+      #header.container
+        #logo
+          %h1
+            =link_to "MouseSourcing", "http://www.mousesourcing.com/" 
+        #nav-bar
+          %ul.menu
+            %li.menu-solo
+              -# start facebook login 
+              -if user_signed_in?
+                #user_info_container
+                  #user_info
+                    =current_user.name
+                    %br
+                    =current_user.email
+                    %br
+                    =link_to "Log out", destroy_user_session_path
+                  =image_tag current_user.photo
+              -else
+                =link_to image_tag("fb-login-button.png", :alt => "Facebook"), "/auth/facebook", :class => "auth_provider signin"
+              -# end facebook login
+            %li
+              %a.top-nav.menu-trigger#trigger-my-neighborhoods{href: '#'}
+                Filter
+                %span.sf-sub-indicator &#x25BC;
+
+        #search-simple.last
+          %form#search-simple-form{action: "/search"}
+            %input#q.textid{name:"q", type:"text", value:"Search Ideas"}
+            %input#search-simple-submit.btn.white.in-search{type:"submit", value:"&#x25B6;"}
+    #main_content_wrapper
+      #messages
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+      #content
+        = yield
+    #footer
+      2011

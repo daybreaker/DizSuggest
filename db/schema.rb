@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20110630022157) do
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
-  create_table "dinings", :force => true do |t|
+  create_table "restaurants", :force => true do |t|
     t.string   "name"
     t.string   "permalink"
     t.string   "when_to_go"

@@ -1,0 +1,11 @@
+@import "compass/reset";
+
+$main-color: #ce4dd6;
+$style: solid;
+
+#header-wrapper {
+  border-bottom: {
+    color: $main-color;
+    style: $style;
+  }
+}
