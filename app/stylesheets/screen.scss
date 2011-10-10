@@ -1,11 +1,155 @@
 @import "compass/reset";
+@import "compass/css3";
+@import "compass/typography/lists/horizontal-list";
+@import "compass/utilities/general/clearfix";
+@import "compass/utilities/general/min";
 
-$main-color: #ce4dd6;
-$style: solid;
+$experimental-support-for-svg: true; /* SVG graduebt support for IE9 and Opera */
+$lightblue:#bae4f0;
+$darkblue:#1092c6;
+$lightyellow:#fbf9eb;
+$page_width:950px;
+$header_font_family:Verdana, Geneva, sans-serif;
+$body_font_family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 
-#header-wrapper {
-  border-bottom: {
-    color: $main-color;
-    style: $style;
+html, body{
+  height: 100%;
+}
+
+body{
+  @include background-image(linear-gradient($lightblue 250px, $darkblue));
+  font-family: $body_font_family;
+}
+
+.container {
+  width: $page_width;
+  margin: 0 auto;
+}
+
+.fieldset { 
+  border-top: 1px solid #ddd; 
+  margin-top: 7px; 
+  width: 500px;
+  h3 { 
+    margin-left: 30px;
+    span { 
+      font-size: 12px; 
+      color: #999;
+      display: inline; 
+      padding: 0 10px; 
+      position: relative; top: -11px; 
+      &.active{background-color: $lightyellow;}
+    }
   }
 }
+
+#header-wrapper {
+  position: relative;
+  color: white;
+  height: 65px;
+  background-color:$darkblue;
+  $default-box-shadow-blur:15px;
+  @include single-box-shadow;
+  a {
+    text-decoration:none;
+    font-weight:bold;
+    &:hover{text-decoration:underline;}
+    &:visited{color: white;}
+  }
+  #header{
+    background: transparent;
+    position: relative;
+    height: 60px;
+    font-family: $header_font_family;
+    #logo{
+      float:left;
+      width: 185px;
+      height: 40px;
+      margin-top: 17px;
+      h1{
+        a { font-size: 24px; }
+      }
+    }
+    #menu{
+      position: absolute;
+      right: 200px;
+      bottom: 0;
+      a{float:right;}
+      img.user_image{float:right;}
+      #user_info_container{
+        position: relative;
+        height: 50px;
+        #user_info{
+          text-align: right;
+          position: absolute;
+          right: 60px;
+          bottom: 0;
+          &.logged_in{
+            font-size: 14px;
+            line-height: 16px;
+          }
+          &.signin{bottom: 3px;}
+          a{white-space:nowrap;}
+        }
+      }
+    }
+    #filter{
+      position: absolute;
+      width: 150px;
+      height: 35px;
+      text-align: center;
+      background-color:$lightblue;
+      right: 0;
+      bottom: -20px;
+      padding-top: 10px;
+      @include border-top-left-radius(10px);
+      @include border-top-right-radius(10px);
+      a{color:$darkblue;}
+      @include transition-property(background);
+      @include transition-duration(.5s);
+      @include transition-timing-function(ease-in);
+      &.active{background-color:$lightyellow;}
+    }
+  }
+}
+
+#filter_list{
+  display: none;
+  background-color: $lightyellow;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  margin-left: -20px;
+  @include clearfix;
+  $default-box-shadow-h-offset: 10px;
+  $default-box-shadow-inset:inset;
+  @include single-box-shadow;
+  #parks_filter{
+    display: block;
+    height:30px;
+    margin-bottom: 20px;
+    ul{
+      &.parks{
+        display: inline;
+        @include horizontal-list;
+      }
+      &.idea_types{
+        width: 100px;
+        border-left: solid 1px #ddd;
+        float:right;
+        padding-left: 20px;
+      }
+    }
+  }
+  #areas_filter{
+    ul{
+      @include horizontal-list;
+    }
+  }
+  #attractions_filter{
+    ul{
+      @include horizontal-list;
+    }
+  }
+}
+
+

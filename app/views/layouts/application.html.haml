@@ -14,36 +14,59 @@
         #logo
           %h1
             =link_to "MouseSourcing", "http://www.mousesourcing.com/" 
-        #nav-bar
-          %ul.menu
-            %li.menu-solo
-              -# start facebook login 
+        #menu
+          #user_info_container
+            -# start facebook login
+            -if user_signed_in?
+              =image_tag current_user.photo, :class => 'user_image'
+            -else
+              =link_to image_tag("button-facebook_color.png", :alt => "Facebook", :height => 50, :width => 50), "/auth/facebook", :class => "auth_provider signin"
+            #user_info{:class => user_signed_in? ? "logged_in" : "signin"}
               -if user_signed_in?
-                #user_info_container
-                  #user_info
-                    =current_user.name
-                    %br
-                    =current_user.email
-                    %br
-                    =link_to "Log out", destroy_user_session_path
-                  =image_tag current_user.photo
+                =current_user.name
+                %br
+                =current_user.email
+                %br
+                =link_to "Log out", destroy_user_session_path
               -else
-                =link_to image_tag("fb-login-button.png", :alt => "Facebook"), "/auth/facebook", :class => "auth_provider signin"
-              -# end facebook login
-            %li
-              %a.top-nav.menu-trigger#trigger-my-neighborhoods{href: '#'}
-                Filter
-                %span.sf-sub-indicator &#x25BC;
-
-        #search-simple.last
-          %form#search-simple-form{action: "/search"}
-            %input#q.textid{name:"q", type:"text", value:"Search Ideas"}
-            %input#search-simple-submit.btn.white.in-search{type:"submit", value:"&#x25B6;"}
-    #main_content_wrapper
-      #messages
+                %h2 
+                  =link_to "Login with Facebook", "/auth/facebook", :class => "auth_provider signin"
+        #filter
+          %a.top-nav.filter-trigger{href: '#'}
+            Filter
+            %span.sf-sub-indicator &#x25BC;
+        -##search
+        -#  %form#search-form{action: "/search"}
+        -#    %input#q.textid{name:"q", type:"text", value:"Search Ideas"}
+        -#    %input#search-simple-submit.btn.white.in-search{type:"submit", value:"&#x25B6;"}                
+    #filter_list
+      #parks_filter.container
+        .fieldset
+          %h3
+            %span Select a Park
+        %ul.parks
+          %li Magic Kingdom
+          %li Epcot
+          %li Hollywood Studios
+          %li Animal Kingdom
+          %li Hotels
+        %ul.idea_types
+          %li Attractions
+          %li Shows
+          %li Dining
+      #areas_filter.container
+        .fieldset
+          %h3
+            %span Select an Area
+        %ul.areas
+          %li Space Mountain
+          %li Buzz Lightyear 
+    #message_wrapper
+      #messages.container
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+    #main_content_wrapper.container
       #content
         = yield
-    #footer
+    #footer.container
       2011
