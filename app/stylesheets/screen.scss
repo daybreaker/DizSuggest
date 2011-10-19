@@ -1,3 +1,8 @@
+/***********
+Variables
+***********/
+
+
 @import "compass/reset";
 @import "compass/css3";
 @import "compass/typography/lists/horizontal-list";
@@ -8,17 +13,27 @@ $experimental-support-for-svg: true; /* SVG graduebt support for IE9 and Opera *
 $lightblue:#bae4f0;
 $darkblue:#1092c6;
 $lightyellow:#fbf9eb;
+$lighteryellow:#fdfdf9;
 $page_width:950px;
 $header_font_family:Verdana, Geneva, sans-serif;
 $body_font_family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 
+
+/************
+Application
+************/
+
 html, body{
   height: 100%;
+  background-color: $darkblue;
 }
 
 body{
   @include background-image(linear-gradient($lightblue 250px, $darkblue));
+  background-color: $darkblue;
   font-family: $body_font_family;
+  font-size: 13px;
+  line-height: 14px;
 }
 
 .container {
@@ -63,11 +78,15 @@ body{
     font-family: $header_font_family;
     #logo{
       float:left;
-      width: 185px;
+      width: 300px;
       height: 40px;
       margin-top: 17px;
       h1{
-        a { font-size: 24px; }
+        a { 
+          color: white;
+          font-size: 24px; 
+          span { font-size: 12px;}
+        }
       }
     }
     #menu{
@@ -102,6 +121,7 @@ body{
       right: 0;
       bottom: -20px;
       padding-top: 10px;
+      font-size: 16px;
       @include border-top-left-radius(10px);
       @include border-top-right-radius(10px);
       a{color:$darkblue;}
@@ -152,4 +172,44 @@ body{
   }
 }
 
+#main_content_wrapper{
+  padding-top: 20px;
+}
 
+
+/**********
+Idea Partial
+**********/
+.idea{
+  .vote_info{
+    float:left;
+    width: 20%;
+  }
+  .idea_info{
+    width:80%-10px;
+    margin: 10px 0;
+    border: 3px black solid;
+    overflow: hidden;
+    background-color: $lighteryellow;
+    @include border-bottom-right-radius(15px);  
+    h2{
+      font-family: $header_font_family;
+      font-size: 18px;
+      width: 100%-20px;
+      background-color: $lightyellow;
+      height: 18px;
+      padding: 8px 20px 6px;   
+    }
+    .idea_desc{
+      padding: 15px;
+    }
+    .idea_footer{
+      padding: 10px;
+      border-top: 1px solid dotted;
+      div{ 
+        float:left;
+        margin-right: 10px;
+      }
+    }
+  }
+}

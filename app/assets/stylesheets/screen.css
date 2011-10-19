@@ -1,3 +1,6 @@
+/***********
+Variables
+***********/
 /* line 17, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -64,12 +67,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* SVG graduebt support for IE9 and Opera */
-/* line 15, ../../stylesheets/screen.scss */
+/************
+Application
+************/
+/* line 26, ../../stylesheets/screen.scss */
 html, body {
   height: 100%;
+  background-color: #1092c6;
 }
 
-/* line 19, ../../stylesheets/screen.scss */
+/* line 31, ../../stylesheets/screen.scss */
 body {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIyNTBweCIgc3RvcC1jb2xvcj0iI2JhZTRmMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzEwOTJjNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -79,26 +86,29 @@ body {
   background-image: -o-linear-gradient(#bae4f0 250px, #1092c6);
   background-image: -ms-linear-gradient(#bae4f0 250px, #1092c6);
   background-image: linear-gradient(#bae4f0 250px, #1092c6);
+  background-color: #1092c6;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 13px;
+  line-height: 14px;
 }
 
-/* line 24, ../../stylesheets/screen.scss */
+/* line 39, ../../stylesheets/screen.scss */
 .container {
   width: 950px;
   margin: 0 auto;
 }
 
-/* line 29, ../../stylesheets/screen.scss */
+/* line 44, ../../stylesheets/screen.scss */
 .fieldset {
   border-top: 1px solid #ddd;
   margin-top: 7px;
   width: 500px;
 }
-/* line 33, ../../stylesheets/screen.scss */
+/* line 48, ../../stylesheets/screen.scss */
 .fieldset h3 {
   margin-left: 30px;
 }
-/* line 35, ../../stylesheets/screen.scss */
+/* line 50, ../../stylesheets/screen.scss */
 .fieldset h3 span {
   font-size: 12px;
   color: #999;
@@ -107,12 +117,12 @@ body {
   position: relative;
   top: -11px;
 }
-/* line 41, ../../stylesheets/screen.scss */
+/* line 56, ../../stylesheets/screen.scss */
 .fieldset h3 span.active {
   background-color: #fbf9eb;
 }
 
-/* line 46, ../../stylesheets/screen.scss */
+/* line 61, ../../stylesheets/screen.scss */
 #header-wrapper {
   position: relative;
   color: white;
@@ -123,77 +133,82 @@ body {
   -o-box-shadow: 0px 0px 15px #333333;
   box-shadow: 0px 0px 15px #333333;
 }
-/* line 53, ../../stylesheets/screen.scss */
+/* line 68, ../../stylesheets/screen.scss */
 #header-wrapper a {
   text-decoration: none;
   font-weight: bold;
 }
-/* line 56, ../../stylesheets/screen.scss */
+/* line 71, ../../stylesheets/screen.scss */
 #header-wrapper a:hover {
   text-decoration: underline;
 }
-/* line 57, ../../stylesheets/screen.scss */
+/* line 72, ../../stylesheets/screen.scss */
 #header-wrapper a:visited {
   color: white;
 }
-/* line 59, ../../stylesheets/screen.scss */
+/* line 74, ../../stylesheets/screen.scss */
 #header-wrapper #header {
   background: transparent;
   position: relative;
   height: 60px;
   font-family: Verdana, Geneva, sans-serif;
 }
-/* line 64, ../../stylesheets/screen.scss */
+/* line 79, ../../stylesheets/screen.scss */
 #header-wrapper #header #logo {
   float: left;
-  width: 185px;
+  width: 300px;
   height: 40px;
   margin-top: 17px;
 }
-/* line 70, ../../stylesheets/screen.scss */
+/* line 85, ../../stylesheets/screen.scss */
 #header-wrapper #header #logo h1 a {
+  color: white;
   font-size: 24px;
 }
-/* line 73, ../../stylesheets/screen.scss */
+/* line 88, ../../stylesheets/screen.scss */
+#header-wrapper #header #logo h1 a span {
+  font-size: 12px;
+}
+/* line 92, ../../stylesheets/screen.scss */
 #header-wrapper #header #menu {
   position: absolute;
   right: 200px;
   bottom: 0;
 }
-/* line 77, ../../stylesheets/screen.scss */
+/* line 96, ../../stylesheets/screen.scss */
 #header-wrapper #header #menu a {
   float: right;
 }
-/* line 78, ../../stylesheets/screen.scss */
+/* line 97, ../../stylesheets/screen.scss */
 #header-wrapper #header #menu img.user_image {
   float: right;
 }
-/* line 79, ../../stylesheets/screen.scss */
+/* line 98, ../../stylesheets/screen.scss */
 #header-wrapper #header #menu #user_info_container {
   position: relative;
   height: 50px;
 }
-/* line 82, ../../stylesheets/screen.scss */
+/* line 101, ../../stylesheets/screen.scss */
 #header-wrapper #header #menu #user_info_container #user_info {
   text-align: right;
   position: absolute;
   right: 60px;
   bottom: 0;
 }
-/* line 87, ../../stylesheets/screen.scss */
+/* line 106, ../../stylesheets/screen.scss */
 #header-wrapper #header #menu #user_info_container #user_info.logged_in {
   font-size: 14px;
   line-height: 16px;
 }
-/* line 91, ../../stylesheets/screen.scss */
+/* line 110, ../../stylesheets/screen.scss */
 #header-wrapper #header #menu #user_info_container #user_info.signin {
   bottom: 3px;
 }
-/* line 92, ../../stylesheets/screen.scss */
+/* line 111, ../../stylesheets/screen.scss */
 #header-wrapper #header #menu #user_info_container #user_info a {
   white-space: nowrap;
 }
-/* line 96, ../../stylesheets/screen.scss */
+/* line 115, ../../stylesheets/screen.scss */
 #header-wrapper #header #filter {
   position: absolute;
   width: 150px;
@@ -203,6 +218,7 @@ body {
   right: 0;
   bottom: -20px;
   padding-top: 10px;
+  font-size: 16px;
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
   -o-border-top-left-radius: 10px;
@@ -228,16 +244,16 @@ body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 107, ../../stylesheets/screen.scss */
+/* line 127, ../../stylesheets/screen.scss */
 #header-wrapper #header #filter a {
   color: #1092c6;
 }
-/* line 111, ../../stylesheets/screen.scss */
+/* line 131, ../../stylesheets/screen.scss */
 #header-wrapper #header #filter.active {
   background-color: #fbf9eb;
 }
 
-/* line 116, ../../stylesheets/screen.scss */
+/* line 136, ../../stylesheets/screen.scss */
 #filter_list {
   display: none;
   background-color: #fbf9eb;
@@ -251,13 +267,13 @@ body {
   -o-box-shadow: inset 10px 0px 15px #333333;
   box-shadow: inset 10px 0px 15px #333333;
 }
-/* line 126, ../../stylesheets/screen.scss */
+/* line 146, ../../stylesheets/screen.scss */
 #filter_list #parks_filter {
   display: block;
   height: 30px;
   margin-bottom: 20px;
 }
-/* line 131, ../../stylesheets/screen.scss */
+/* line 151, ../../stylesheets/screen.scss */
 #filter_list #parks_filter ul.parks {
   display: inline;
   margin: 0;
@@ -289,14 +305,14 @@ body {
 #filter_list #parks_filter ul.parks li.last {
   padding-right: 0;
 }
-/* line 135, ../../stylesheets/screen.scss */
+/* line 155, ../../stylesheets/screen.scss */
 #filter_list #parks_filter ul.idea_types {
   width: 100px;
   border-left: solid 1px #ddd;
   float: right;
   padding-left: 20px;
 }
-/* line 144, ../../stylesheets/screen.scss */
+/* line 164, ../../stylesheets/screen.scss */
 #filter_list #areas_filter ul {
   margin: 0;
   padding: 0;
@@ -327,7 +343,7 @@ body {
 #filter_list #areas_filter ul li.last {
   padding-right: 0;
 }
-/* line 149, ../../stylesheets/screen.scss */
+/* line 169, ../../stylesheets/screen.scss */
 #filter_list #attractions_filter ul {
   margin: 0;
   padding: 0;
@@ -357,4 +373,55 @@ body {
 /* line 50, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #filter_list #attractions_filter ul li.last {
   padding-right: 0;
+}
+
+/* line 175, ../../stylesheets/screen.scss */
+#main_content_wrapper {
+  padding-top: 20px;
+}
+
+/**********
+Idea Partial
+**********/
+/* line 184, ../../stylesheets/screen.scss */
+.idea .vote_info {
+  float: left;
+  width: 20%;
+}
+/* line 188, ../../stylesheets/screen.scss */
+.idea .idea_info {
+  width: 80% -10px;
+  margin: 10px 0;
+  border: 3px black solid;
+  overflow: hidden;
+  background-color: #fdfdf9;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  -o-border-bottom-right-radius: 15px;
+  -ms-border-bottom-right-radius: 15px;
+  -khtml-border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+/* line 195, ../../stylesheets/screen.scss */
+.idea .idea_info h2 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 18px;
+  width: 100% -20px;
+  background-color: #fbf9eb;
+  height: 18px;
+  padding: 8px 20px 6px;
+}
+/* line 203, ../../stylesheets/screen.scss */
+.idea .idea_info .idea_desc {
+  padding: 15px;
+}
+/* line 206, ../../stylesheets/screen.scss */
+.idea .idea_info .idea_footer {
+  padding: 10px;
+  border-top: 1px solid dotted;
+}
+/* line 209, ../../stylesheets/screen.scss */
+.idea .idea_info .idea_footer div {
+  float: left;
+  margin-right: 10px;
 }

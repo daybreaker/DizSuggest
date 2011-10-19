@@ -1,0 +1,22 @@
+=form_for @idea do |f|
+  =f.error_messages
+  %fieldset.bigger
+    %legend
+      =action.capitalize + " an Idea"
+    %p
+      =f.label :subject
+      .input
+        =f.text_field :subject, {:class=>'xxlarge'}
+    %p
+      =f.label :description
+      .input
+        =f.text_area :description, {:class=>'xxlarge'}
+    %p
+      =f.label :tag_list, raw("Tags<br><span class=\"small\">(seperate with comma ',')")
+      .input
+        =f.text_field :tag_list, {:class=>'xxlarge'}
+    %p.location_details{:style => "display:none"}
+    .actions
+      =f.submit :submit, {:class =>"btn primary"}
+      .clear
+-#<!-- TODO: Tiered Tag Cloud. Maybe step by step form, all ajaxy? -->

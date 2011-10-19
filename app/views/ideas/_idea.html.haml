@@ -1,0 +1,28 @@
+.idea
+  .vote_info{:id=>"votes_#{idea.id}"}
+    .total_votes
+      %span= idea.plusminus
+    .upvote_container= '<a href="javascript://" class="upvote">+</a>'.html_safe if user_signed_in?
+    .downvote_container= '<a href="javascript://" class="downvote">&ndash;</a>'.html_safe if user_signed_in?    
+    %input.idea{:type => "hidden", :value => idea.id}
+  .idea_info
+    %h2= idea.subject
+    .idea_desc= simple_format idea.description
+    .idea_footer
+      .view_idea
+        =link_to "View", idea_path(idea)
+        | 
+        =link_to "Edit", edit_idea_path(idea) if (current_user && idea.submitter.id == current_user.id)
+        | 
+        =link_to "Delete", idea, :confirm => 'Are you sure?', :method => :delete  if (current_user && idea.submitter.id == current_user.id)
+      .submitter
+        .submitter_email
+          %strong 
+            Submitted By:
+          =idea.submitter.name
+      .total_comments
+        %strong
+          Total Comments: 
+        .number_comments= idea.comment_threads.count
+      .tag_cloud
+        = idea.tags.join(', ')
