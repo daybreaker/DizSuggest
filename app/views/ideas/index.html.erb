@@ -1,8 +1,0 @@
-<% title "Ideas" %>
-
-<%= render @ideas %>
-
-<% if user_signed_in? %>
-  <p><%= link_to "New Idea", new_idea_path %></p>
-<% end %>
-

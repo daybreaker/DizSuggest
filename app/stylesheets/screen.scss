@@ -14,6 +14,7 @@ $lightblue:#bae4f0;
 $darkblue:#1092c6;
 $lightyellow:#fbf9eb;
 $lighteryellow:#fdfdf9;
+$lightgrey: #e6e6e6;
 $page_width:950px;
 $header_font_family:Verdana, Geneva, sans-serif;
 $body_font_family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -56,6 +57,11 @@ body{
       &.active{background-color: $lightyellow;}
     }
   }
+}
+
+
+.circle_base {
+  @include border-radius(999px);
 }
 
 #header-wrapper {
@@ -181,17 +187,46 @@ body{
 Idea Partial
 **********/
 .idea{
+  position: relative;
   .vote_info{
-    float:left;
-    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 15%;
+    height: 100%;
+    vertical-align: middle;
+    .total_votes{
+      background-color: white;
+      width: 85px;
+      height: 85px;
+      position: absolute;
+      top: 30px;
+      left: 15px;
+    }
+    .left_ear{
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0px;
+      left:0;
+    }
+    .right_ear{
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0px;
+      left:75px;
+    }
   }
   .idea_info{
-    width:80%-10px;
-    margin: 10px 0;
-    border: 3px black solid;
+    width:85%-10px;
+    margin: 10px 0 0 15%;
     overflow: hidden;
-    background-color: $lighteryellow;
-    @include border-bottom-right-radius(15px);  
+    background-color: transparent;
+    position: relative; 
     h2{
       font-family: $header_font_family;
       font-size: 18px;
@@ -199,17 +234,40 @@ Idea Partial
       background-color: $lightyellow;
       height: 18px;
       padding: 8px 20px 6px;   
+      border-left: 3px black solid;
+      border-right: 3px black solid;
+      border-top: 3px black solid;
+      @include border-top-right-radius(15px); 
+      @include border-top-left-radius(15px);
+    }
+    .owner_options{
+      position: absolute;
+      top: 8px;
+      right: 10px;
     }
     .idea_desc{
-      padding: 15px;
+      background-color: white;
+      padding: 10px;
+      border-left: 3px black solid;
+      border-right: 3px black solid;
     }
     .idea_footer{
       padding: 10px;
-      border-top: 1px solid dotted;
+      background-color: $lightgrey;
+      border-left: 3px black solid;
+      border-right: 3px black solid;
+      border-bottom: 3px black solid;
+      @include border-bottom-right-radius(15px); 
+      @include border-bottom-left-radius(15px); 
+      @include clearfix;
       div{ 
         float:left;
         margin-right: 10px;
       }
     }
   }
+}
+
+.comment_children{
+  margin-left: 5px;
 }

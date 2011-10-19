@@ -1,0 +1,21 @@
+.idea_show
+  %h2= @idea.subject
+  .vote_info{:id=>"votes_#{@idea.id}"}
+    .total_votes.circle_base
+      %span= @idea.plusminus
+    .left_ear.circle_base= '<a href="javascript://" class="upvote">+</a>'.html_safe if user_signed_in?
+    .right_ear.circle_base= '<a href="javascript://" class="downvote">&ndash;</a>'.html_safe if user_signed_in?    
+    %input.idea{:type => "hidden", :value => @idea.id}
+
+  %p.description= @idea.description
+  %p.submitter= @idea.submitter.email
+  %p.owner_actions
+    = link_to "Edit", edit_idea_path(@idea) if (current_user && @idea.submitter.id == current_user.id)
+    = link_to "Destroy", @idea, :confirm => 'Are you sure?', :method => :delete  if (current_user && @idea.submitter.id == current_user.id)
+
+#comments
+  %div
+    = link_to "Add Comment", new_comment_idea_path(@idea), {:class => 'reply'}
+
+  -@idea.root_comments.each do |comment|
+    = render comment

@@ -1,0 +1,7 @@
+.comment
+  = comment.body
+  = link_to " + reply", new_comment_idea_path(@idea, {:comment => comment.id}), {:class => 'reply'}
+  -if comment.has_children?
+    .comment_children
+      -comment.children.each do |x|
+        = render x

@@ -1,24 +1,24 @@
 $(function(){
   $('a.upvote').live('click', function(){
-    parent = $(this).parents('div.votes');
+    parent = $(this).parents('div.vote_info');
     id = $('input.idea', parent).val();
     url = (parent.hasClass('index')) ? '/' : '/ideas/'+id;
 
     $.post('/ideas/' + id + '/upvote', {id:id}, function(){
-      parent.load(url + ' div#votes_'+ id, function(){
-				$(".total_votes").textfill({maxFontSize: 60});
+      $(".total_votes",parent).parent().load(url + ' div#votes_'+ id, function(){
+//				$(".total_votes").textfill({maxFontSize: 60});
 			});
     });
   });
   
   $('a.downvote').live('click', function(){
-    parent = $(this).parents('div.votes');
+    parent = $(this).parents('div.vote_info');
     id = $('input.idea', parent).val();
     url = (parent.hasClass('index')) ? '/' : '/ideas/'+id;
 
     $.post('/ideas/' + id + '/downvote', {id:id}, function(){
-			parent.load(url + ' div#votes_'+ id, function(){
-				$(".total_votes").textfill({maxFontSize: 60});
+			$(".total_votes",parent).parent().load(url + ' div#votes_'+ id, function(){
+//				$(".total_votes").textfill({maxFontSize: 60});
 			});
     });
   });
